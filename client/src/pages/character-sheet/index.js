@@ -2,25 +2,28 @@ import React from "react";
 import "./CharacterSheet.css";
 import CharacterSheetHeader from './header.js';
 
-function CharacterSheet() {
-  const [data, setData] = React.useState({});
+import CharacterSheetAttributes from './attributes';
 
-  // React.useEffect(() => {
-  //   fetch("/api/character")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.message));
-  // }, []);
+function CharacterSheet(params) {
+  const [data, setData] = React.useState({});
+  console.log(params.selectedCharacter);
+
+  React.useEffect(() => {
+    if (params.selectedCharacter) setData(params.selectedCharacter)
+    else 
+      fetch("/api/character")
+        .then((res) => res.json())
+        .then((data) => setData(data.message));
+  }, []);
 
   const primaryTab = (
     <div className="character_sheet__primary_tab">
 
-      <div className="character_sheet__primary_tab__sidebar">
-        <div className="character_sheet__attributes" characterdata={data}/>
-      </div>
+      <CharacterSheetAttributes characterData={data}/>
       
-      <div className="character_sheet__primary_tab__main_content">
-        <div className="character_sheet__resources" characterdata={data}/>
-        <div className="character_sheet__skills" characterdata={data}/>
+      <div className="character_sheet__primary_tab__main_content, col-sm-9">
+        <div className="character_sheet__resources" characterData={data}/>
+        <div className="character_sheet__skills" characterData={data}/>
       </div>
 
     </div>
@@ -28,10 +31,7 @@ function CharacterSheet() {
 
   return (
     <div className="character_sheet__container">
-      <header className="App-header">
-        <p>WIP</p>
-      </header>
-      <CharacterSheetHeader className="character_sheet__header" characterdata={data}/>
+      <CharacterSheetHeader className="character_sheet__header" characterData={data}/>
       <div className="character_sheet__content">
         <div className="character_sheet__tabs">
           {primaryTab}

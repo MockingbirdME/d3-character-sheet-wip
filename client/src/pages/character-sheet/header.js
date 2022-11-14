@@ -1,7 +1,7 @@
 
-function CharacterSheet(params) {
-  console.log(params.characterdata);
-  const {name, advancementPoints} = params.characterdata
+function CharacterSheetHeader(params) {
+  console.log(params.characterData);
+  const {name, advancementPoints} = params.characterData
   return (
     <div className="character_sheet__header row">
       <p className="col-sm-8">NAME: {name}</p>
@@ -10,4 +10,4 @@ function CharacterSheet(params) {
   );
 }
 
-export default CharacterSheet;
+export default CharacterSheetHeader;

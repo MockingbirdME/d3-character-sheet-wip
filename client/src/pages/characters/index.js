@@ -18,7 +18,7 @@ function Characters() {
   }, []);
 
   const characterListItems = characterList.map((data) => (
-    <li key={data.name} onClick={() => setSelectedCharacter(data.name)}>{data.name}</li>
+    <li key={data.name} onClick={() => setSelectedCharacter(data)}>{data.name}</li>
   ))
 
   const characterListContent = (
@@ -28,7 +28,7 @@ function Characters() {
   )
 
   const content = selectedCharacter
-    ? <CharacterSheet characterName={selectedCharacter}/>
+    ? <CharacterSheet selectedCharacter={selectedCharacter}/>
     : characterListContent
   return (
     <div className="characters__container">
