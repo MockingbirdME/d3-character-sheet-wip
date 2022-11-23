@@ -3,6 +3,7 @@ import "./CharacterSheet.css";
 import CharacterSheetHeader from './header.js';
 
 import CharacterSheetAttributes from './attributes';
+import CharacterSheetResources from "./resources";
 
 function CharacterSheet(params) {
   const [data, setData] = React.useState({});
@@ -21,8 +22,8 @@ function CharacterSheet(params) {
 
       <CharacterSheetAttributes characterData={data}/>
       
-      <div className="character_sheet__primary_tab__main_content, col-sm-9">
-        <div className="character_sheet__resources" characterData={data}/>
+      <div className="character_sheet__primary_tab__main_content">
+        <CharacterSheetResources characterData={data} />
         <div className="character_sheet__skills" characterData={data}/>
       </div>
 
