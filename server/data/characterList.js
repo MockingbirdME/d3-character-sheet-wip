@@ -19,6 +19,12 @@ const character1 = {
       current: 4
 
     },
+    vigilance: {
+      max: 8,
+      currentMax: 6,
+      current: 4
+
+    },
     willpower: {
       max: 8,
       currentMax: 8,
@@ -26,6 +32,12 @@ const character1 = {
 
     },
     luck: {
+      max: 3,
+      currentMax: 2,
+      current: 1
+
+    },
+    wounds: {
       max: 3,
       currentMax: 2,
       current: 1

@@ -5,6 +5,11 @@
   padding: 1rem;
   border: 1px solid black;
   border-radius: 2rem;
+  width: 50rem;
+}
+
+.character_sheet__content {
+
 }
 
 .character_sheet__header {
@@ -18,7 +23,8 @@
 }
 
 .character_sheet__attributes {
-  max-width: 12rem;
+  width: 12rem;
+  min-width: 12rem;
   border: 1px solid black;
   border-radius: 1rem;
   padding: 1rem;
@@ -64,32 +70,61 @@
 }
 
 .character_sheet__primary_tab__main_content {
-  margin: 0 0 0 1rem;
+  margin: 0 1rem 0 1rem;
 }
 
 .character_sheet__resources {
   border: 1px solid black;
   border-radius: 1rem;
   padding: .5rem;
-  width: 33rem;
+  width: 35rem;
+}
+
+.character_sheet__resources_groups {
+  display: flex;
+  justify-content: space-between;
+  width: 34rem;
+  flex-wrap: wrap;
 }
 
 .character_sheet__resource {
   display: flex;
   justify-content: space-between;
-  margin: .25rem;
-  width: 31rem;
+  margin-left: .25rem;
+  /* width: 16rem; */
 }
 
 .character_sheet__resource__name {
   width: 5rem;
 }
 
+.character_sheet__resource_slider_container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 11.5rem;
+}
+
 .character_sheet__resource_slider {
   border: 1px solid black;
   display: flex;
-  width: 16rem;
+  width: 9rem;
   justify-content: space-evenly;
+}
+
+.character_sheet__resource_slider_controls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 2rem;
+  font-size: 70%;
+  align-items: center;
+}
+.character_sheet__resource_slider_controls_current {
+  border: 1px black solid;
+  border-radius: 5rem;
+}
+.character_sheet__resource_slider_controls_max {
+  border: 1px black solid;
+  border-radius: 5rem;
 }
 
 .character_sheet__resource_slider_value {

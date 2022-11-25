@@ -14,54 +14,52 @@ function CharacterSheetResource(params) {
     return (<span key={index} className={className} >{index}</span>)
   })
 
-  const sliderDownButton = (type) => (
-    <span onClick={() => resourceData[type] = resourceData[type] === 0 ? 0 : resourceData[type] - 1}>test </span>
-  );
-
-  console.log(sliderDownButton('current'));
-
-  const currentSliderControls = (
-    <div>
-      <span onClick={() => {
-        console.log('decrementing current');
-        if (currentValue === 0) return;
-        setCurrentValue(currentValue - 1)
-      }}>&lt;</span>
-      current
-      <span onClick={() => {
-        console.log('incrementing current');
-        if (currentValue === currentMaxValue) return;
-        setCurrentValue(currentValue + 1)
-      }}>&gt;  </span>
+  const sliderLeftControls = (
+    <div className="character_sheet__resource_slider_controls">
       <span onClick={() => {
         console.log('decrementing max');
         if (currentMaxValue === 0) return;
         setCurrentMaxValue(currentMaxValue - 1)
-      }}> &lt;</span>
-      max
+      }} className="character_sheet__resource_slider_controls_max"> &lt;&lt;</span>
+      <span onClick={() => {
+        console.log('decrementing current');
+        if (currentValue === 0) return;
+        setCurrentValue(currentValue - 1)
+      }} className="character_sheet__resource_slider_controls_current">&lt;</span>
+    </div>
+  )
+
+  const sliderRightControls = (
+    <div className="character_sheet__resource_slider_controls">
+      <span onClick={() => {
+        console.log('incrementing current');
+        if (currentValue === currentMaxValue) return;
+        setCurrentValue(currentValue + 1)
+      }} className="character_sheet__resource_slider_controls_current">&gt;  </span>
       <span onClick={() => {
         console.log('incrementing max');
         if (currentMaxValue === resourceData.max) return;
         setCurrentMaxValue(currentMaxValue + 1)
-      }}>&gt;</span>
-    </div>
-  )
-
-  const sliderControls = (
-    <div>
-      {currentSliderControls}
+      }} className="character_sheet__resource_slider_controls_max">&gt;&gt;</span>
     </div>
   )
 
   return (
     <div className="character_sheet__resource">
       <b className="character_sheet__resource__name">{resourceName[0].toUpperCase() + resourceName.substring(1)}</b>
-      <div className="character_sheet__resource_slider">
-        {slider}
+      <div className="character_sheet__resource_slider_container">
+        {sliderLeftControls}
+        <div className="character_sheet__resource_slider">
+          
+          {slider}
+        </div>
+
+        {sliderRightControls}
       </div>
-      <div>
+      
+      {/* <div>
         {sliderControls}
-      </div>
+      </div> */}
     </div>
   );
 }
