@@ -30,7 +30,9 @@ function CharacterSheetAttributes(params) {
     'Defense Bonus, Melee',
     'Defense Bonus, Ranged',
     'Initiative',
-    'Reach'
+    'Reach',
+    'Size',
+    'Speed'
   ]
   const secondaryAttributes = (secondaryAttributeOrderedList.map(attribute => getAttributeRow(attribute)))
 
