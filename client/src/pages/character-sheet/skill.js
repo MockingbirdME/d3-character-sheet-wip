@@ -4,7 +4,7 @@ function CharacterSheetSkill(params) {
   console.log(skillData);
 
   if (!skillData) return (<div></div>)
-
+  console.log(skillData);
   const skillChecksDisplay = skillData.checks.map(skillCheck => (
     <div className="character_sheet__skill__check">
       <span>{skillCheck.name}:</span>

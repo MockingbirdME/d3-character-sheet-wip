@@ -1,3 +1,5 @@
+import simu from './characters/simu.js';
+
 const character1 = {
   name: "Joey, child of pain",
   advancementPoints: 7,
@@ -85,6 +87,194 @@ const character1 = {
   }
 }
 
-module.exports = [
-  character1
+const johnsCharacter = {
+  name: "Joey, child of pain",
+  backgrounds: [
+    {
+      displayName: "Criminal",
+      tags: [],
+      description: "",
+      luck: 1,
+      stamina: 1,
+      willpower: 2,
+      startingWealth: 0,
+      focusedSkills: ["awareness", "legerdemain"],
+      relatedSkills: ["awareness", "legerdemain", "performance", "personal movement", "stealth"],
+      traitsOptional: ["Danger Sense"]
+    }
+  ],
+  advancementPoints: 0,
+  attributes: {
+    body: 1,
+    mind: 0,
+    perception: 1,
+    reflexes: 2,
+    'Armor Value': 0,
+    'Defense Bonus, Mental': 1,
+    'Defense Bonus, Melee': 2,
+    'Defense Bonus, Ranged': 4,
+    'Initiative': 2,
+    'Reach': 1,
+    'Size': 0,
+    'Speed': 4
+  },
+  resources: {
+    defense: {
+      max: 8,
+      currentMax: 8,
+      current: 4
+    },
+    stamina: {
+      max: 8,
+      currentMax: 8,
+      current: 4
+
+    },
+    vigilance: {
+      max: 8,
+      currentMax: 6,
+      current: 4
+
+    },
+    willpower: {
+      max: 8,
+      currentMax: 8,
+      current: 4
+
+    },
+    luck: {
+      max: 3,
+      currentMax: 2,
+      current: 1
+
+    },
+    wounds: {
+      max: 3,
+      currentMax: 2,
+      current: 1
+
+    }
+  },
+  skills: {
+    animalHandling: {
+      displayName: 'Animal Handling',
+      proficiency: 'untrained',
+      checks: [
+        {name: 'Befriend', bonus: 1},
+        {name: 'Ride/Drive', bonus: 1},
+        {name: 'Train/Command', bonus: 1}
+      ]
+    },
+    awareness: {
+      displayName: 'Awareness',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Alertness', bonus: 2},
+        {name: 'Investigate', bonus: 0},
+        {name: 'Search', bonus: 0},
+        {name: 'Sense Motive', bonus: 1},
+        {name: 'Size Up', bonus: 1}
+      ]
+    },
+    discipline: {
+      displayName: 'Discipline',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    knowledgeAcademics: {
+      displayName: 'Knowledge (Academics)',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    knowledgeLore: {
+      displayName: 'Knowledge (Lore)',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    legerdemain: {
+      displayName: 'Legerdemain',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Pick Locks', bonus: 1},
+        {name: 'Slight of Hand', bonus: 2},
+        {name: 'Thieves Cant', bonus: 0}
+      ]
+    },
+    medicine: {
+      displayName: 'Medicine',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    meleeCombat: {
+      displayName: 'Melee Combat',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    performance: {
+      displayName: 'Performance',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    personalDefense: {
+      displayName: 'Personal Defense',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    personalMovement: {
+      displayName: 'personalMovement',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    physicalConditioning: {
+      displayName: 'Physical Conditioning',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    rangedCombat: {
+      displayName: 'Ranged Combat',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    stealth: {
+      displayName: 'Stealth',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    },
+    survival: {
+      displayName: 'Survival',
+      proficiency: 'Untrained',
+      checks: [
+        {name: 'Placeholder', bonus: 1}
+      ]
+    }
+  }
+}
+
+
+export default [
+  character1,
+  johnsCharacter,
+  simu
 ]

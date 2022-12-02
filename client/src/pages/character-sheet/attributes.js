@@ -25,12 +25,9 @@ function CharacterSheetAttributes(params) {
   const primaryAttributes = primaryAttributeOrderedList.map(attribute => getAttributeBox(attribute))
 
   const secondaryAttributeOrderedList = [
-    'Armor Value',
     'Defense Bonus, Mental',
     'Defense Bonus, Melee',
     'Defense Bonus, Ranged',
-    'Initiative',
-    'Reach',
     'Size',
     'Speed'
   ]

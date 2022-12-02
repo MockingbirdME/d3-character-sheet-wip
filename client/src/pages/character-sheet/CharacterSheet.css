@@ -5,7 +5,7 @@
   padding: 1rem;
   border: 1px solid black;
   border-radius: 2rem;
-  width: 50rem;
+  width: 60rem;
 }
 
 .character_sheet__content {
@@ -77,13 +77,13 @@
   border: 1px solid black;
   border-radius: 1rem;
   padding: .5rem;
-  width: 35rem;
+  width: 45rem;
 }
 
 .character_sheet__resources_groups {
   display: flex;
   justify-content: space-between;
-  width: 34rem;
+  width: 44rem;
   flex-wrap: wrap;
 }
 
@@ -101,13 +101,13 @@
 .character_sheet__resource_slider_container {
   display: flex;
   justify-content: space-evenly;
-  width: 11.5rem;
+  width: 16.5rem;
 }
 
 .character_sheet__resource_slider {
   border: 1px solid black;
   display: flex;
-  width: 9rem;
+  width: 14rem;
   justify-content: space-evenly;
 }
 
@@ -147,12 +147,12 @@
   border-radius: 1rem;
   margin-top: 1rem;
   padding: .5rem;
-  width: 35rem;
+  width: 45rem;
 }
 
 .character_sheet__skill {
   border: 1px solid black;
-  width: 11rem;
+  width: 10rem;
   margin-top: .5rem;
   padding: .25rem;
   font-size: 85%;

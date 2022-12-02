@@ -1,6 +1,6 @@
-const express = require("express");
+import express  from "express";
 
-const characterList = require("./data/characterList.js")
+import characterList from "./data/characterList.js"
 
 const PORT = process.env.PORT || 3001;
 

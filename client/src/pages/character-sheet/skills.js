@@ -6,7 +6,9 @@ function CharacterSheetSkills(params) {
 
   if (!characterData.resources) return (<div></div>)
 
-  const skills = ['animalHandling', 'awareness', 'legerdemain', 'legerdemain'];
+  // const skills = ['animalHandling', 'awareness', 'legerdemain', 'legerdemain'];
+
+  const skills = Object.keys(characterData.skills)
 
   const skillsDisplay = skills.map(skill => (
     <CharacterSheetSkill skillData={characterData.skills[skill]} />
