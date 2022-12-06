@@ -48,7 +48,7 @@ export default {
     reflexes: 1,
     'Defense Bonus, Mental': 2,
     'Defense Bonus, Melee': 1,
-    'Defense Bonus, Ranged': 3,
+    'Defense Bonus, Ranged': 4,
     'Size': 0,
     'Speed': 4
   },
@@ -88,24 +88,20 @@ export default {
     animalHandling: {
       displayName: 'Animal Handling',
       proficiency: 'untrained',
-      advancementPoints: 0,
-      advancementPointsSpend: 3,
+      advancementPoints: 1,
+      advancementPointsSpend: 2,
       traits: [
         {
           name: "something_about_my_smell_rank_one",
-          cost: 1,
-          effect: "gain +1 to all befriend skill checks"
-        },
-        {
-          name: "proficiency_novice",
           cost: 2,
-          effect: "animal handling skill checks can be made without an unskilled penalty die"
+          effect: "gain +1 to all befriend skill checks",
+          skillBoosts: ["Befriend"]
         }
       ],
       checks: [
-        {name: 'Befriend', bonus: 1},
-        {name: 'Ride/Drive', bonus: 0},
-        {name: 'Train/Command', bonus: 0}
+        'Befriend',
+        'Ride/Drive',
+        'Train/Command'
       ]
     },
     awareness: {
@@ -116,36 +112,35 @@ export default {
       traits: [
         {
           name: "quick_to_notice",
-          cost: 1,
-          effect: "gain +1 to all alertness skill checks"
-        },
-        {
-          name: "vigilant",
-          cost: 1,
-          effect: "gain +1 vigilance"
-        },
-        {
-          name: "Proficiency (Novice)",
           cost: 2,
-          effect: "awareness skill checks can be made without an unskilled penalty die"
+          effect: "gain +1 to all alertness skill checks",
+          skillBoosts: ["Alertness"]
+        },
+        {
+          name: "combat_awareness",
+          cost: 2,
+          effect: "gain +1 ranged defense bonus",
+          alwaysDisplay: true
         },
         {
           name: "vigilant",
           cost: 2,
-          effect: "gain +1 vigilance"
+          effect: "gain +1 vigilance",
+          skillBoosts: ["Vigilance"]
         },
-        { 
-          name: "Proficiency (Skilled)",
+        {
+          name: "vigilant",
           cost: 3,
-          effect: "awareness skill checks gain a skilled bonus die"
+          effect: "gain +1 vigilance",
+          skillBoosts: ["Vigilance"]
         }
       ],
       checks: [
-        {name: 'Alertness', bonus: 2},
-        {name: 'Investigate', bonus: 0},
-        {name: 'Search', bonus: 0},
-        {name: 'Sense Motive', bonus: 1},
-        {name: 'Size Up', bonus: 1}
+        'Alertness',
+        'Investigate',
+        'Search',
+        'Sense Motive',
+        'Size Up'
       ]
     },
     artisan_example: {
@@ -154,11 +149,11 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Craft', bonus: 0},
-        {name: 'Forge/Duplicate', bonus: 0},
-        {name: 'Identify', bonus: 0},
-        {name: 'Repair', bonus: 0},
-        {name: 'Upgrade', bonus: 0}
+        'Craft',
+        'Forge/Duplicate',
+        'Identify',
+        'Repair',
+        'Upgrade'
       ]
     },
     discipline: {
@@ -167,7 +162,7 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     knowledgeAcademics: {
@@ -176,7 +171,7 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     knowledgeLore: {
@@ -185,7 +180,7 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     legerdemain: {
@@ -194,9 +189,9 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Pick Locks', bonus: 0},
-        {name: 'Slight of Hand', bonus: 0},
-        {name: 'Thieves Cant', bonus: 0}
+        'Pick Locks', 
+        'Slight of Hand', 
+        'Thieves Cant'
       ]
     },
     medicine: {
@@ -205,7 +200,7 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     meleeCombat: {
@@ -214,7 +209,7 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     performance: {
@@ -223,7 +218,7 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     personalDefense: {
@@ -232,192 +227,155 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     personalMovement: {
-      displayName: 'personalMovement',
+      displayName: 'Personal Movement',
       proficiency: 'Untrained',
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        {name: 'Placeholder', bonus: 1}
+        'Placeholder'
       ]
     },
     physicalConditioning: {
       displayName: 'Physical Conditioning',
       proficiency: 'Untrained',
-      advancementPoints: 0,
-      advancementPointsSpend: 6,
+      advancementPoints: 2,
+      advancementPointsSpend: 4,
       traits: [
         {
           name: "stubborn_tenacity",
-          cost: 1,
-          effect: "gain +1 to all hold breath and remain conscious skill checks"
-        },
-        {
-          name: "staying_power",
-          cost: 1,
-          effect: "Gain +1 to all endurance skill checks"
-        },
-        { 
-          name: "Proficiency (Novice)",
           cost: 2,
-          effect: "physical conditioning skill checks can be made without an unskilled penalty die"
+          effect: "gain +1 to all hold breath and remain conscious skill checks",
+          skillBoosts: ["Hold Breath", "Remain Conscious"]
         },
         {
           name: "staying_power",
           cost: 2,
-          effect: "Gain +1 to all endurance skill checks"
+          effect: "Gain +1 to all endurance skill checks",
+          skillBoosts: ["Endurance"]
         }
       ],
       checks: [
-        {name: 'Lift/Drag/Push', bonus: 0},
-        {name: 'Endurance', bonus: 2},
-        {name: 'Hold Breath', bonus: 1},
-        {name: 'Remain Conscious', bonus: 1}
+        'Lift/Drag/Push',
+        'Endurance',
+        'Hold Breath',
+        'Remain Conscious'
       ]
     },
     rangedCombat: {
       displayName: 'Ranged Combat',
       proficiency: 'Untrained',
-      advancementPoints: 0,
-      advancementPointsSpend: 9,
+      advancementPoints: 2,
+      advancementPointsSpend: 7,
       traits: [
         {
           name: "aim",
-          cost: 1,
-          effect: "Your maximum aim bonus is increased by +1."
+          cost: 2,
+          effect: "Your maximum aim bonus is increased by +1.",
+          alwaysDisplay: true
         },
         {
           name: "overwatch",
-          cost: 1,
-          effect: "When taking the overwatch action, increase the diameter of your targeted area by +1"
-        },
-        { 
-          name: "Proficiency (Novice)",
           cost: 2,
-          effect: "physical conditioning skill checks can be made without an unskilled penalty die"
+          effect: "When taking the overwatch action, increase the diameter of your targeted area by +1",
+          alwaysDisplay: true
         },
         {
           name: "aim",
-          cost: 2,
-          effect: "Your maximum aim bonus is increased by +1."
-        },
-        { 
-          name: "Proficiency (Skilled)",
           cost: 3,
-          effect: "awareness skill checks gain a skilled bonus die"
+          effect: "Your maximum aim bonus is increased by +1.",
+          alwaysDisplay: true
         }
       ],
       checks: [
-        {name: 'Ranged Attack', bonus: 0}
+        'Ranged Attack'
       ]
     },
     stealth: {
       displayName: 'Stealth',
       proficiency: 'Untrained',
-      advancementPoints: 0,
-      advancementPointsSpend: 9,
+      advancementPoints: 2,
+      advancementPointsSpend: 7,
       traits: [
         {
           name: "masquerade",
-          cost: 1,
-          effect: "Gain +1 to all cover tracks and disguise skill checks."
-        },
-        {
-          name: "obfuscate",
-          cost: 1,
-          effect: "Gain +1 to all hide and sneak skill checks."
-        },
-        { 
-          name: "Proficiency (Novice)",
           cost: 2,
-          effect: "stealth skill checks can be made without an unskilled penalty die"
+          effect: "Gain +1 to all cover tracks and disguise skill checks.",
+          skillBoosts: ["Cover Tracks", "Disguise"]
         },
         {
           name: "obfuscate",
           cost: 2,
-          effect: "Gain +1 to all hide and sneak skill checks."
+          effect: "Gain +1 to all hide and sneak skill checks.",
+          skillBoosts: ["Hide", "Sneak"]
         },
-        { 
-          name: "Proficiency (Skilled)",
+        {
+          name: "obfuscate",
           cost: 3,
-          effect: "stealth skill checks gain a skilled bonus die"
+          effect: "Gain +1 to all hide and sneak skill checks.",
+          skillBoosts: ["Hide", "Sneak"]
         }
       ],
       checks: [
-        {name: 'Blend In', bonus: 0},
-        {name: 'Cover Tracks', bonus: 1},
-        {name: 'Disguise', bonus: 1},
-        {name: 'Hide', bonus: 2},
-        {name: 'Sneak', bonus: 2},
+        'Blend In',
+        'Cover Tracks',
+        'Disguise',
+        'Hide',
+        'Sneak'
       ]
     },
     survival: {
       displayName: 'Survival',
       proficiency: 'Untrained',
-      advancementPoints: 0,
-      advancementPointsSpend: 24,
+      advancementPoints: 1,
+      advancementPointsSpend: 23,
       traits: [
         {
           name: "surveyor",
-          cost: 1,
-          effect: "Gain +1 to all find/build shelter and make trap skill checks."
-        },
-        {
-          name: "tracker",
-          cost: 1,
-          effect: "Gain +1 to all track skill checks."
-        },
-        { 
-          name: "Proficiency (Novice)",
           cost: 2,
-          effect: "survival skill checks can be made without an unskilled penalty die"
-        },
-        {
-          name: "environment_specialist",
-          cost: 2,
-          selection: "forest",
-          effect: "while in the chosen environment gain an additional skilled bonus die to all survival checks"
-        },
-        {
-          name: "surveyor",
-          cost: 2,
-          effect: "Gain +1 to all find/build shelter and make trap skill checks."
+          effect: "Gain +1 to all find/build shelter and make traps skill checks.",
+          skillBoosts: ["Find/Build Shelter", "Make Traps"]
         },
         {
           name: "tracker",
           cost: 2,
-          effect: "Gain +1 to all track skill checks."
-        },
-        { 
-          name: "Proficiency (Skilled)",
-          cost: 3,
-          effect: "survival skill checks gain a skilled bonus die"
+          effect: "Gain +1 to all track skill checks.",
+          skillBoosts: ["Track"]
         },
         {
           name: "surveyor",
           cost: 3,
-          effect: "Gain +1 to all find/build shelter and make trap skill checks."
+          effect: "Gain +1 to all find/build shelter and make trap skill checks.",
+          skillBoosts: ["Find/Build Shelter", "Make Traps"]
         },
         {
           name: "tracker",
           cost: 3,
-          effect: "Gain +1 to all track skill checks."
+          effect: "Gain +1 to all track skill checks.",
+          skillBoosts: ["Track"]
         },
         {
-          name: "proficiency_expert",
+          name: "tracker",
           cost: 5,
-          effect: "survival skill checks gain a skilled bonus die and get +1 to the skill check result if at least one skilled bonus die was used to calculate the final result"
+          effect: "Gain +1 to all track skill checks.",
+          skillBoosts: ["Track"]
+        },
+        {
+          name: "tracker",
+          cost: 8,
+          effect: "Gain +1 to all track skill checks.",
+          skillBoosts: ["Track"]
         }
       ],
       checks: [
-        {name: 'Find/Build Shelter', bonus: 3},
-        {name: 'Forage', bonus: 0},
-        {name: 'Hunt', bonus: 0},
-        {name: 'Make Traps', bonus: 3},
-        {name: 'Track', bonus: 3}
+        'Find/Build Shelter',
+        'Forage',
+        'Hunt',
+        'Make Traps',
+        'Track'
       ]
     }
   }
