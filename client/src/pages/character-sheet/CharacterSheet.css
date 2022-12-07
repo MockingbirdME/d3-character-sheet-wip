@@ -5,7 +5,7 @@
   padding: 1rem;
   border: 1px solid black;
   border-radius: 2rem;
-  width: 63rem;
+  width: 67rem;
 }
 
 .character_sheet__content {
@@ -77,13 +77,13 @@
   border: 1px solid black;
   border-radius: 1rem;
   padding: .5rem;
-  width: 48rem;
+  width: 52rem;
 }
 
 .character_sheet__resources_groups {
   display: flex;
   justify-content: space-between;
-  width: 47rem;
+  width: 51rem;
   flex-wrap: wrap;
 }
 
@@ -101,13 +101,13 @@
 .character_sheet__resource_slider_container {
   display: flex;
   justify-content: space-evenly;
-  width: 16.5rem;
+  width: 19.5rem;
 }
 
 .character_sheet__resource_slider {
   border: 1px solid black;
   display: flex;
-  width: 14rem;
+  width: 16rem;
   justify-content: space-evenly;
 }
 
@@ -146,7 +146,7 @@
   border-radius: 1rem;
   margin-top: 1rem;
   padding: .5rem;
-  width: 48rem;
+  width: 52rem;
 }
 
 
@@ -165,7 +165,7 @@
 
 .character_sheet__skill {
   border: 1px solid black;
-  width: 11rem;
+  width: 12.5rem;
   margin-top: .5rem;
   padding: .25rem;
   font-size: 85%;
@@ -183,7 +183,7 @@
   z-index: 1;
   margin-left: -0.5rem;
   margin-top: 1rem;
-  width: 11.5rem;
+  width: 13rem;
 }
 
 .character_sheet_skill__trait__hover_text {
@@ -192,7 +192,7 @@
   position: absolute;
   z-index: 1;
   margin-left: -1.5rem;
-  width: 11.5rem;
+  width: 13rem;
 }
 
 .character_sheet__skill__check {

@@ -3,24 +3,22 @@ export default {
   backgrounds: [
     {
       displayName: "Hunter",
-      primaryAttribute: "perception",
       description: "Those who have experience capturing or killing creatures regardless of method. A hunter may use traps to protect their farm, a bow feed their family, or their own wits to bring in criminals with bounties on their heads.",
       luck: 1,
       stamina: 1,
       vigilance: 1,
-      willpower: 1,
+      willpower: 0,
       primarySkill: "survival",
       secondarySkill: "stealth",
       tertiarySkill: "awareness"
     },
     {
       displayName: "Laborer",
-      primaryAttribute: "body",
       description: "",
-      luck: 1,
-      stamina: 3,
+      luck: 0,
+      stamina: 2,
       vigilance: 0,
-      willpower: 0,
+      willpower: 2,
       primarySkill: "survival",
       secondarySkill: "physical conditioning",
       tertiarySkill: "animal handling",
@@ -28,11 +26,10 @@ export default {
     },
     {
       displayName: "Sniper",
-      primaryAttribute: "perception",
       description: "",
       luck: 0,
       stamina: 1,
-      vigilance: 2,
+      vigilance: 1,
       willpower: 2,
       primarySkill: "ranged combat",
       secondarySkill: "awareness",
@@ -48,20 +45,20 @@ export default {
     reflexes: 1,
     'Defense Bonus, Mental': 2,
     'Defense Bonus, Melee': 1,
-    'Defense Bonus, Ranged': 4,
+    'Defense Bonus, Ranged': 3,
     'Size': 0,
     'Speed': 4
   },
   resources: {
     defense: {
-      max: 13,
-      currentMax: 13,
-      current: 13
+      max: 8,
+      currentMax: 8,
+      current: 8
     },
     stamina: {
-      max: 9,
-      currentMax: 9,
-      current: 9
+      max: 8,
+      currentMax: 8,
+      current: 8
     },
     vigilance: {
       max: 7,
@@ -69,9 +66,9 @@ export default {
       current: 7
     },
     willpower: {
-      max: 7,
-      currentMax: 7,
-      current: 7
+      max: 8,
+      currentMax: 8,
+      current: 8
     },
     luck: {
       max: 3,
@@ -79,15 +76,15 @@ export default {
       current: 3
     },
     wounds: {
-      max: 3,
-      currentMax: 3,
-      current: 3
+      max: 2,
+      currentMax: 2,
+      current: 2
     }
   },
   skills: {
     animalHandling: {
       displayName: 'Animal Handling',
-      proficiency: 'untrained',
+      
       advancementPoints: 1,
       advancementPointsSpend: 2,
       traits: [
@@ -106,30 +103,29 @@ export default {
     },
     awareness: {
       displayName: 'Awareness',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 9,
       traits: [
         {
-          name: "quick_to_notice",
+          name: "Quick to Notice",
           cost: 2,
           effect: "gain +1 to all alertness skill checks",
           skillBoosts: ["Alertness"]
         },
         {
-          name: "combat_awareness",
+          name: "Bob and Weave",
           cost: 2,
-          effect: "gain +1 ranged defense bonus",
-          alwaysDisplay: true
+          effect: "gain +1 ranged defense bonus"
         },
         {
-          name: "vigilant",
+          name: "Vigilant",
           cost: 2,
           effect: "gain +1 vigilance",
           skillBoosts: ["Vigilance"]
         },
         {
-          name: "vigilant",
+          name: "Vigilant",
           cost: 3,
           effect: "gain +1 vigilance",
           skillBoosts: ["Vigilance"]
@@ -145,7 +141,7 @@ export default {
     },
     artisan_example: {
       displayName: 'Artisan (example)',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -158,7 +154,7 @@ export default {
     },
     discipline: {
       displayName: 'Discipline',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -167,7 +163,7 @@ export default {
     },
     knowledgeAcademics: {
       displayName: 'Knowledge (Academics)',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -176,7 +172,7 @@ export default {
     },
     knowledgeLore: {
       displayName: 'Knowledge (Lore)',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -185,7 +181,7 @@ export default {
     },
     legerdemain: {
       displayName: 'Legerdemain',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -196,7 +192,7 @@ export default {
     },
     medicine: {
       displayName: 'Medicine',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -205,7 +201,7 @@ export default {
     },
     meleeCombat: {
       displayName: 'Melee Combat',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -214,7 +210,7 @@ export default {
     },
     performance: {
       displayName: 'Performance',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
@@ -223,36 +219,39 @@ export default {
     },
     personalDefense: {
       displayName: 'Personal Defense',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
-      checks: [
-        'Placeholder'
-      ]
+      checks: []
     },
     personalMovement: {
       displayName: 'Personal Movement',
-      proficiency: 'Untrained',
+      
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'Balance',
+        'Climb',
+        'Jump',
+        'Sprint',
+        'Swim',
+        'Tumble'
       ]
     },
     physicalConditioning: {
       displayName: 'Physical Conditioning',
-      proficiency: 'Untrained',
+      
       advancementPoints: 2,
       advancementPointsSpend: 4,
       traits: [
         {
-          name: "stubborn_tenacity",
+          name: "Stubborn Tenacity",
           cost: 2,
           effect: "gain +1 to all hold breath and remain conscious skill checks",
           skillBoosts: ["Hold Breath", "Remain Conscious"]
         },
         {
-          name: "staying_power",
+          name: "Staying Power",
           cost: 2,
           effect: "Gain +1 to all endurance skill checks",
           skillBoosts: ["Endurance"]
@@ -267,24 +266,24 @@ export default {
     },
     rangedCombat: {
       displayName: 'Ranged Combat',
-      proficiency: 'Untrained',
+      
       advancementPoints: 2,
       advancementPointsSpend: 7,
       traits: [
         {
-          name: "aim",
+          name: "Steady Aim",
           cost: 2,
           effect: "Your maximum aim bonus is increased by +1.",
           alwaysDisplay: true
         },
         {
-          name: "overwatch",
+          name: "Overwatch",
           cost: 2,
           effect: "When taking the overwatch action, increase the diameter of your targeted area by +1",
           alwaysDisplay: true
         },
         {
-          name: "aim",
+          name: "Steady Aim",
           cost: 3,
           effect: "Your maximum aim bonus is increased by +1.",
           alwaysDisplay: true
@@ -296,24 +295,24 @@ export default {
     },
     stealth: {
       displayName: 'Stealth',
-      proficiency: 'Untrained',
+      
       advancementPoints: 2,
       advancementPointsSpend: 7,
       traits: [
         {
-          name: "masquerade",
+          name: "Masquerade",
           cost: 2,
           effect: "Gain +1 to all cover tracks and disguise skill checks.",
           skillBoosts: ["Cover Tracks", "Disguise"]
         },
         {
-          name: "obfuscate",
+          name: "Obfuscate",
           cost: 2,
           effect: "Gain +1 to all hide and sneak skill checks.",
           skillBoosts: ["Hide", "Sneak"]
         },
         {
-          name: "obfuscate",
+          name: "Obfuscate",
           cost: 3,
           effect: "Gain +1 to all hide and sneak skill checks.",
           skillBoosts: ["Hide", "Sneak"]
@@ -329,42 +328,42 @@ export default {
     },
     survival: {
       displayName: 'Survival',
-      proficiency: 'Untrained',
+      
       advancementPoints: 1,
       advancementPointsSpend: 23,
       traits: [
         {
-          name: "surveyor",
+          name: "Surveyor",
           cost: 2,
           effect: "Gain +1 to all find/build shelter and make traps skill checks.",
           skillBoosts: ["Find/Build Shelter", "Make Traps"]
         },
         {
-          name: "tracker",
+          name: "Tracker",
           cost: 2,
           effect: "Gain +1 to all track skill checks.",
           skillBoosts: ["Track"]
         },
         {
-          name: "surveyor",
+          name: "Surveyor",
           cost: 3,
           effect: "Gain +1 to all find/build shelter and make trap skill checks.",
           skillBoosts: ["Find/Build Shelter", "Make Traps"]
         },
         {
-          name: "tracker",
+          name: "Tracker",
           cost: 3,
           effect: "Gain +1 to all track skill checks.",
           skillBoosts: ["Track"]
         },
         {
-          name: "tracker",
+          name: "Tracker",
           cost: 5,
           effect: "Gain +1 to all track skill checks.",
           skillBoosts: ["Track"]
         },
         {
-          name: "tracker",
+          name: "Tracker",
           cost: 8,
           effect: "Gain +1 to all track skill checks.",
           skillBoosts: ["Track"]

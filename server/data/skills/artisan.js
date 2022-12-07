@@ -98,7 +98,7 @@ export const artisan = {
     {name: "Copy Cat", effect: {text: "Gain +1 to your {variant} Forge/Duplicate skill checks"}},
     {name: "Crafty", effect: {text: "Gain +1 to your {variant} Craft skill checks"}},
     {name: "Discerning Artisan", effect: {text: "Gain +1 to your {variant} Improve/Identify skill checks"}},
-    {name: "One off trait", effect: {text: ""}, costs: [2]},
+    {name: "Combat Chemist", effect: {text: "You may use your Artisan (Chemist) skill to make melee or ranged attacks that involve deploying your concoctions without additional tools (ex. blowing powder, pour liquid, or tossing a vial of something awful all apply, but firing a crossbow with an explosive attached to the bolt would not)"}, costs: [8]},
     {name: "One off trait with requirement", effect: {text: ""}, requirements: "One off trait", costs: [5]}
   ],
   variantTraits: {
