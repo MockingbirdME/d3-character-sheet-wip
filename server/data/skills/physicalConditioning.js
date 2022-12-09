@@ -90,6 +90,8 @@ export default physicalConditioning = {
     {name: "Stubborn Tenacity", effect: {text: "Gain +1 to all hold breath and remain conscious skill checks."}},
     {name: "Staying Power", effect: {text: "Gain +1 to all endurance skill checks"}},
     {name: "High Vitality", effect: {text: "Gain +1 stamina."}},
+    {name: "Speedy Recovery", effect: {text: "Recover +1 stamina when you take the Restoration Action combat action"}},
+    {name: "Peak Health", cost: [5, 13], effect: {text: "Gain +1 max wounds."}}
     // {name: "Inner Calm", effect: {text: "+1 defense when you take the Steady Oneself combat action"}},
     // {name: "Defensive Camper", effect: {text: "While conscious characters attempting to sneak past or surprise you gain a difficulty penalty die to their skill checks"}, costs: [2]},
     // {name: "Alert", effect: {text: "While conscious characters attempting to sneak past or surprise you gain a difficulty penalty die to their skill checks"}, costs: [3]},

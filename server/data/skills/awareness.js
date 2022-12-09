@@ -119,7 +119,7 @@ export default awareness = {
     {name: "Bob and Weave", effect: {text: "Gain +1 ranged defense bonus"}},
     {name: "vigilant", effect: {text: "Gain +1 vigilance"}},
     {name: "Combat Awareness", cost: [5, 13], effect: {text: "When an enemy is making an attack against you that you are aware of, you may spend a max vigilance to take a dodge or defensive stance action as a reaction, if you have two ranks in this trait, you may spend 2 current vigilance instead."}},
-    // {name: "Inner Calm", effect: {text: "+1 defense when you take the Steady Oneself combat action"}},
+    {name: "Inner Calm", effect: {text: "+1 defense when you take the Steady Oneself combat action"}},
     // {name: "Fast Reflexes", cost: [5, 8], effect: {text: "Once on each of your turns, you may spend a point of defense, vigilance, or willpower to reduce each of your actions speeds by 1. If you've taken this trait twice, you may instead spend one point of max defense, vigilance, or willpower to reduce the speed of each of your actions by 2."}},
     // {name: "Defensive Camper", effect: {text: "While conscious characters attempting to sneak past or surprise you gain a difficulty penalty die to their skill checks"}, costs: [2]},
     // {name: "Alert", effect: {text: "While conscious characters attempting to sneak past or surprise you gain a difficulty penalty die to their skill checks"}, costs: [3]},

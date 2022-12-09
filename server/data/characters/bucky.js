@@ -236,7 +236,8 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'Faint',
+        'Melee Attack'
       ]
     },
     performance: {

@@ -48,7 +48,7 @@ export default {
     'Defense Bonus, Melee': 2,
     'Defense Bonus, Ranged': 1,
     'Size': 0,
-    'Speed': 5
+    'Speed': 4
   },
   resources: {
     defense: {
@@ -261,7 +261,8 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'Faint',
+        'Melee Attack'
       ]
     },
     performance: {

@@ -28,7 +28,7 @@ export default physicalConditioning = {
   traits: [
     {name: "Steady Aim", effect: {text: "Your maximum aim bonus is increased by +1."}},
     {name: "Quick Loader", effect: {text: "When readying or loading ammunition, ready or load 1 additional piece of ammunition"}},
-    {name: "Overwatch", effect: {text: "When taking the overwatch action, increase the diameter of your targeted area by +1"}},
+    {name: "Overwatch", effect: {text: "When taking the overwatch action, increase the radius of your targeted area by +1"}},
     {name: "Weapon Training", cost: [2], unlimited: true, effect: {text: "Select one range weapon, reduce the difficulty rating of that weapon when making ranged attacks with it by 1"}},
     {name: "Close Quarters Training", cost: [3], effect: {text: "You may make ranged attacks when an opponent provokes a free attack against you"}},
     {name: "Close Quarters Expert", cost: [5], effect: {text: "You do not suffer a penalty die when making ranged attacks while in melee range of an opponent"}}

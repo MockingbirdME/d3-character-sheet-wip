@@ -71,7 +71,7 @@ export default discipline = {
     {name: "Brave", effect: {text: "Gain +1 to all resist fear skill checks."}},
     {name: "Commanding", effect: {text: "Gain +1 to all command checks."}},
     {name: "Focused", effect: {text: "Gain +1 to all concentrate skill checks."}},
-    {name: "Determined", effect: {text: "Gain +1 max willpower"}},,
+    {name: "Determined", effect: {text: "Gain +1 max willpower"}},
     {name: "Mind Over Matter", cost: [5, 13], effect: {text: "Gain +1 max wounds."}}
   ],
 };
