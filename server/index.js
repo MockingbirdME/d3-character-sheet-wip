@@ -19,3 +19,8 @@ app.get("/api/characterList", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
+// For any other request, let React handle it.
+app.use((req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
+});
