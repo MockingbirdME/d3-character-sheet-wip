@@ -11,8 +11,6 @@ app.get("/api", (req, res) => {
 });
 
 app.get("/api/characterList", (req, res) => {
-  console.log('returning:');
-  console.log(characterList);
   res.json(characterList);
 });
 

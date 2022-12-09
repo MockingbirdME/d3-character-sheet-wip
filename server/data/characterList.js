@@ -1,5 +1,6 @@
 import bucky from './characters/bucky.js';
 import lidia from './characters/lidia.js';
+import ren from './characters/ren.js';
 import simu from './characters/simu.js';
 
 const character1 = {
@@ -93,5 +94,6 @@ const character1 = {
 export default [
   bucky,
   lidia,
+  ren,
   simu
 ]
