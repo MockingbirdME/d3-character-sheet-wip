@@ -21,6 +21,8 @@ app.listen(PORT, () => {
 });
 
 // For any other request, let React handle it.
+export const reactPath = new URL('../client/build/index.html', import.meta.url);
+console.log(reactPath);
 app.use((req, res) => {
-  res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
+  res.sendFile(reactPath.pathname);
 });
