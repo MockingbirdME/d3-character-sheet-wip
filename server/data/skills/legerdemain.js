@@ -68,7 +68,9 @@ export default legerdemain = {
   traits: [
     {name: "Gentle Touch", effect: {text: "Gain +1 to all pick locks skill checks."}},
     {name: "Fast Hands", effect: {text: "Gain +1 to all slight of hand skill checks."}},
-    {name: "Subtle Speech", effect: {text: "Gain +1 to all thieves cant skill checks"}}
+    {name: "Subtle Speech", effect: {text: "Gain +1 to all thieves cant skill checks"}},
+    {name: "Quick Draw", effect: {text: "Reduce the speed of your ready/stow actions by 2, once reduced to 0 additional instances of this trait allow you to perform one ready/stow action each turn for 0 action points."}},
+    
     // {name: "Inner Calm", effect: {text: "+1 defense when you take the Steady Oneself combat action"}},
     // {name: "Defensive Camper", effect: {text: "While conscious characters attempting to sneak past or surprise you gain a difficulty penalty die to their skill checks"}, costs: [2]},
     // {name: "Alert", effect: {text: "While conscious characters attempting to sneak past or surprise you gain a difficulty penalty die to their skill checks"}, costs: [3]},

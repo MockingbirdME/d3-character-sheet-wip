@@ -189,15 +189,9 @@ export default {
     },
     legerdemain: {
       displayName: 'Legerdemain',
-      advancementPoints: 3,
-      advancementPointsSpend: 9,
+      advancementPoints: 0,
+      advancementPointsSpend: 12,
       traits: [
-        {
-          name: "Gentle Touch",
-          cost: 2,
-          effect: "gain +1 to all pick locks skill checks",
-          skillBoosts: ["Pick Locks"]
-        },
         {
           name: "Fast Hands",
           cost: 2,
@@ -211,10 +205,22 @@ export default {
           skillBoosts: ["Thieves Cant"]
         },
         {
+          name: "Quick Draw",
+          cost: 2,
+          effect: "Reduce the speed of your ready/stow actions by 2, once reduced to 0 additional instances of this trait allow you to perform one ready/stow action each turn for 0 action points.",
+          alwaysDisplay: true
+        },
+        {
           name: "Subtle Speech",
           cost: 3,
           effect: "gain +1 to all thieves cant skill checks",
           skillBoosts: ["Thieves Cant"]
+        },
+        {
+          name: "Quick Draw",
+          cost: 3,
+          effect: "Reduce the speed of your ready/stow actions by 2, once reduced to 0 additional instances of this trait allow you to perform one ready/stow action each turn for 0 action points.",
+          alwaysDisplay: true
         }
       ],
       checks: [

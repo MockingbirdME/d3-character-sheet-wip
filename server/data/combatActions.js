@@ -187,7 +187,7 @@ export default [
       "A character may choose to delay their next turn, when this action is taken set its speed to any value you wish between 1 and 10."
   },
   {
-    displayName: "Ready Stow Item",
+    displayName: "Ready / Stow Item",
     type: "Other",
     actionPointCost: 1,
     staminaCost: 0,
