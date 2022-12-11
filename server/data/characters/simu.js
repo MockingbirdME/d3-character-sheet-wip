@@ -158,7 +158,9 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'Command',
+        'Concentrate',
+        'Resit Fear'
       ]
     },
     knowledgeAcademics: {
@@ -167,7 +169,9 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'History',
+        'Science',
+        'Strategy'
       ]
     },
     knowledgeLore: {
@@ -196,7 +200,10 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'First Aid',
+        'Pharmaceuticals',
+        'Surgery',
+        'Triage'
       ]
     },
     meleeCombat: {
@@ -215,7 +222,9 @@ export default {
       advancementPoints: 0,
       advancementPointsSpend: 0,
       checks: [
-        'Placeholder'
+        'Diplomacy',
+        'Music',
+        'Oration'
       ]
     },
     personalDefense: {
