@@ -49,6 +49,7 @@ export default meleeCombat = {
           - Disarm: spend any amount of additional successes to attempt to disarm an opponent of one item they are holding. If the number of additional successes spent exceeds the target's melee defense bonus, or double the bonus if they are wielding the item in two hands, the item is knocked to the ground in the defender's hex of the attackers choice no further from the target than the number of successes spent to disarm greater than what was required. If the weapon were to end in the attacker's hex and the attack was made unarmed the attacker may choose to equip it as part of the attack action. 
           - Grapple: 
           - Shove: if the attack was made unarmed or with a weapon with the bash property spend any amount of additional successes to attempt to knock the target back, the target will be pushed 1 hex for every success spent greater than the sum of the target's body stat and size. If a shove displaces a target by at least 1 hex more than their melee defense bonus the target is also knocked prone.
+          - Targeted Attack: spend one additional success to target the body or legs, two to target a specific arm, or three to target the head, spend double the required number of success for the target location to also roll a second die for wound effect and the attacker chooses which of the die rolls to use.
           - Trip: 
         `,
       }
