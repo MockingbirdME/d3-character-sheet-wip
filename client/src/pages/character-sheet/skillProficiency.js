@@ -35,11 +35,11 @@ function CharacterSheetSkillProficiency(params) {
   const getProficiencyLevelText = level => {
     switch(level) {
       case "Paragon":
-        return "Add 2 Skilled bonus dice to all skill checks, gain +1 to the roll total for each bonus die in the final result"
+        return "Add 2 Skilled bonus dice to all skill checks, gain +1 to the roll total if at least one bonus die is in the final result, if both dice in the final result are bonus dice, instead gain +3 to the roll total"
       case "Master":
         return "Add 1 Skilled bonus dice to all skill checks, gain +1 to the roll total for each bonus die in the final result"
       case "Expert":
-        return "Add 1 Skilled bonus dice to all skill checks, gain +1 to the roll total if a skilled bonus die in the final result"
+        return "Add 1 Skilled bonus dice to all skill checks, gain +1 to the roll total if at least one bonus die is in the final result"
       case "Skilled":
         return "Add 1 Skilled bonus dice to all skill checks"
       case "Novice":
