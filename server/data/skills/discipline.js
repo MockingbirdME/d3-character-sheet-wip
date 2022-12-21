@@ -1,4 +1,4 @@
-export default discipline = {
+export default {
   name: 'Discipline',
   description: "A measure of a character’s self control. This skill should be used when a character has to act against their desires or when otherwise compelled to do something they're trying not to.",
   skillChecks: [
@@ -68,10 +68,10 @@ export default discipline = {
   ],
   isSkillTree: true,
   traits: [
-    {name: "Brave", effect: {text: "Gain +1 to all resist fear skill checks."}},
-    {name: "Commanding", effect: {text: "Gain +1 to all command checks."}},
-    {name: "Focused", effect: {text: "Gain +1 to all concentrate skill checks."}},
-    {name: "Determined", effect: {text: "Gain +1 max willpower"}},
-    {name: "Mind Over Matter", cost: [5, 13], effect: {text: "Gain +1 max wounds."}}
+    {name: "Brave", effect: {text: "Gain +1 to all resist fear skill checks.", skillBoosts: ["Resist Fear"]}},
+    {name: "Commanding", effect: {text: "Gain +1 to all command checks.", skillBoosts: ["Command"]}},
+    {name: "Focused", effect: {text: "Gain +1 to all concentrate skill checks.", skillBoosts: ["Concentrate"]}},
+    {name: "Determined", effect: {text: "Gain +1 max willpower", attributeBoost: ["Willpower"]}},
+    {name: "Mind Over Matter", cost: [5, 13], effect: {text: "Gain +1 max wounds.", attributeBoost: ["Wounds"]}}
   ],
 };

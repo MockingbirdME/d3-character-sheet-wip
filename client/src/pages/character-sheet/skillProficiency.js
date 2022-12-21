@@ -5,12 +5,10 @@ function CharacterSheetSkillProficiency(params) {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
-    console.log('hovering');
     setIsHovering(true);
   };
 
   const handleMouseOut = () => {
-    console.log('nto hovering');
     setIsHovering(false);
   };
 
@@ -52,7 +50,6 @@ function CharacterSheetSkillProficiency(params) {
   }
 
   if (!skillData) return (<div></div>)
-  console.log(skillData);
 
   const proficiencyLevel = calculateProficiency();
 

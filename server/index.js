@@ -23,7 +23,6 @@ export const reactPath = new URL('../client/build', import.meta.url);
 
 app.use(express.static(reactPath.pathname))
 
-console.log(reactPath);
 app.use((req, res) => {
   res.sendFile(`${reactPath.pathname}/index.html`);
 });

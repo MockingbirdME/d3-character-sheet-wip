@@ -10,9 +10,7 @@ function Characters() {
   React.useEffect(() => {
     fetch("/api/characterList")
       .then(async (res) => {
-        console.log(res);
         const data = await res.json()
-        console.log(data);
         setCharacterList(data)
       })
   }, []);

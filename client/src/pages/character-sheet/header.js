@@ -1,6 +1,5 @@
 
 function CharacterSheetHeader(params) {
-  console.log(params.characterData);
   const {name, advancementPoints} = params.characterData
   return (
     <div className="character_sheet__header row">

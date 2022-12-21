@@ -1,7 +1,7 @@
-export const artisan = {
+export default {
   name: 'Artisan',
   isTemplate: true,
-  variants: [ 'Artist', 'Carpenter', "Chemist", "Cooking", "Mason", "Smith", "Woodworker" ],
+  variants: [ 'Artist', 'Carpenter', "Chemist", "Cook", "Mason", "Smith", "Woodworker" ],
   skillChecks: [
     {
       name: 'Craft',
@@ -19,7 +19,7 @@ export const artisan = {
           19 - Painting a portrait that any lord would be happy to hang in their hall (Artist)
           22 - Mixing a chemical concoction almost impossible to come by in your setting (Chemist)
         `,
-      criticalFailure: 'The final product is ruined, destroying at least some of the materials in the process and potentially harming the crafter or environment around them (A chemist trying to create a smoke powder sets it off in the process, filling a city block with thick choking smog and destroying all of the components for the entire batch).',
+      criticalFailure: 'The final product is ruined, destroying at least some of the materials in the process and potentially harming the artisan or the environment around them (A chemist trying to create a smoke powder sets it off in the process, filling a city block with thick choking smog and destroying all of the components for the entire batch).',
       conditionalFailure: 'The product is of poor quality with obvious flaws, or the product failed to be created but at least some of the material may be reused (A smith crafts a sabre that\'s likely to be serviceable for a single fight before it risks breaking when it contacts its target or another blade)',
       nearSuccess: 'The product has a flaw, takes significantly longer or more material to craft than expected, but generally will fulfill its purpose (A carpenter splits their trim boards when putting a door on a house, they spend several extra hours and additional material but the end product is functional and only allows the smallest of drafts through)',
       success: 'The product is a textbook example of what was being tried for (A tavern owner produces dozens of uniform loaves of bread up to the standards of their high end customers)',
@@ -94,11 +94,11 @@ export const artisan = {
   ],
   isSkillTree: true,
   traits: [
-    {name: "Bodger", effect: {text: "Gain +1 to your {variant} Repair skill checks"}},
-    {name: "Copy Cat", effect: {text: "Gain +1 to your {variant} Forge/Duplicate skill checks"}},
-    {name: "Crafty", effect: {text: "Gain +1 to your {variant} Craft skill checks"}},
-    {name: "Discerning Artisan", effect: {text: "Gain +1 to your {variant} Improve/Identify skill checks"}},
-    {name: "Combat Chemist", effect: {text: "You may use your Artisan (Chemist) skill to make melee or ranged attacks that involve deploying your concoctions without additional tools (ex. blowing powder, pour liquid, or tossing a vial of something awful all apply, but firing a crossbow with an explosive attached to the bolt would not)"}, costs: [8]},
+    {name: "Bodger", effect: {text: "Gain +1 to your {variant} Repair skill checks", skillBoosts: ["Repair"]}},
+    {name: "Copy Cat", effect: {text: "Gain +1 to your {variant} Forge/Duplicate skill checks", skillBoosts: ["Forge/Duplicate"]}},
+    {name: "Crafty", effect: {text: "Gain +1 to your {variant} Craft skill checks", skillBoosts: ["Craft"]}},
+    {name: "Discerning Artisan", effect: {text: "Gain +1 to your {variant} Improve/Identify skill checks", skillBoosts: ["Improve/Identify"]}},
+    {name: "Combat Chemist", effect: {text: "You may use your Artisan (Chemist) skill to make melee or ranged attacks that involve deploying your concoctions without additional tools (ex. blowing powder, pour liquid, or tossing a vial of something awful all apply, but firing a crossbow with an explosive attached to the bolt would not)"}, alwaysDisplay: true, costs: [8]},
     {name: "One off trait with requirement", effect: {text: ""}, requirements: "One off trait", costs: [5]}
   ],
   variantTraits: {

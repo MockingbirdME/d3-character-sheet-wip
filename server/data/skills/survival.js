@@ -1,4 +1,4 @@
-export default survival = {
+export default {
   name: 'Survival',
   description: "How well a character can keep themselves alive and healthy outside of civilization or when in the less comfortable parts of it.",
   skillChecks: [
@@ -106,9 +106,9 @@ export default survival = {
   ],
   isSkillTree: true,
   traits: [
-    {name: "Surveyor", effect: {text: "Gain +1 to all find/build shelter and make trap skill checks."}},
-    {name: "Scavenger", effect: {text: "Gain +1 to all forage and hunt skill checks."}},
-    {name: "Tracker", effect: {text: "Gain +1 to all track skill checks."}},
+    {name: "Surveyor", effect: {text: "Gain +1 to all find/build shelter and make traps skill checks.", skillBoosts: ["Find/Build Shelter", "Make Traps"]}},
+    {name: "Scavenger", effect: {text: "Gain +1 to all forage and hunt skill checks.", skillBoosts: ["Forage", "Hunt"]}},
+    {name: "Tracker", effect: {text: "Gain +1 to all track skill checks.", skillBoosts: ["Track"]}},
     // {name: "Weapon Training", cost: [1], unlimited: true, effect: {text: "Select one range weapon, reduce the difficulty rating of that weapon when making ranged attacks with it by 1"}},
     // {name: "Inner Calm", effect: {text: "+1 defense when you take the Steady Oneself combat action"}},
     {name: "Environment Specialist", effect: {text: "Choose an environment, while in that environment gain an additional skilled bonus die to all survival checks"}, costs: [5], unlimited: true},

@@ -1,23 +1,87 @@
 
+import { useState } from "react";
 import CharacterSheetSkillProficiency from "./skillProficiency";
 import CharacterSheetSkillTrait from "./skillTrait";
 
 function CharacterSheetSkill(params) {
+  const [selectedVariant, setSelectedVariant] = useState();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
   const {skillData, displayAllTraits} = params;
-  console.log(displayAllTraits);
-  const getSkillBoostTotal = skill =>       
-    skillData.traits?.reduce((acc, val) =>  
-      val.skillBoosts?.includes(skill) ? acc + 1 : acc, 0)
 
   if (!skillData) return (<div></div>)
 
+  const setVariant = key => {
+    const { advancementPoints, checks, name, traits } = skillData.variants[key];
+
+    skillData.advancementPoints = advancementPoints;
+    skillData.checks = checks;
+    skillData.name = name;
+    skillData.traits = traits;
+
+    setSelectedVariant(key);
+    setOpen(false);
+  }
+
+  const setHighestProficiencyVariant = () => {
+    const highestProficiencyVariant = Object.keys(skillData.variants).reduce((acc, key) => {
+      const variant = skillData.variants[key];
+      const totalAdvancementPoints = variant.traits.reduce((acc, trait) => {
+        return trait.cost + acc;
+      }, variant.advancementPoints);
+
+      return !acc.key || totalAdvancementPoints > acc.totalAdvancementPoints  
+        ? { key, totalAdvancementPoints }
+        : acc
+
+    }, {});
+    setVariant(highestProficiencyVariant.key)
+  }
+
+  const variants = skillData.variants 
+    ? Object.keys(skillData.variants)
+    : null;
+
+  if (skillData.variants) {
+    // TODO, instead set it to the index with the highest advancement point total
+    if (!selectedVariant) setHighestProficiencyVariant();
+  }
+
+  const nameDisplayDropdown = skillData.variants
+    ? (
+      <div className="dropdown">
+      <button onClick={handleOpen}>{open ? 'v' : '>'}</button>
+      {open ? (
+        <ul className="character_sheet__skill__name_variant_menu">
+          {variants.map(variant => (
+            <li key={variant} className="character_sheet__skill__name_variant_menu_item">
+              <button
+                onClick={() => setVariant(variant)}
+                className="character_sheet__skill__name_variant_menu_item_button">
+                  {variant}
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+    )
+    : ""
+
+  const nameDisplay = (
+    <div className="character_sheet__skill__name"><div><b>{skillData.name}</b></div>{nameDisplayDropdown}</div>
+  )
+
   const proficiencyDisplay = <CharacterSheetSkillProficiency skillData={skillData} />
 
-  const skillChecksItems = skillData.checks.map(skillCheck => (
-    <li className="character_sheet__skill__check_list_item">
+  const skillChecksItems = Object.keys(skillData.checks).map(skillCheck => (
+    <li key={skillCheck.toLocaleLowerCase()} className="character_sheet__skill__check_list_item">
       <span>{skillCheck}:</span>
-      <span>+ {getSkillBoostTotal(skillCheck) || 0}</span>
+      <span>+ {skillData.checks[skillCheck]}</span>
     </li>
   ))
 
@@ -35,7 +99,7 @@ function CharacterSheetSkill(params) {
   const traitsDisplayItems = skillData.traits?.map(trait => {
     if (!trait.alwaysDisplay && !displayAllTraits) return "";
     return (
-      <CharacterSheetSkillTrait traitData={trait} />
+      <CharacterSheetSkillTrait key={`${trait.name.toLocaleLowerCase()}-${trait.cost}`}  traitData={trait} />
     )
   }).filter(item => item)
 
@@ -52,7 +116,7 @@ function CharacterSheetSkill(params) {
 
   return (
     <div className="character_sheet__skill">
-      <b className="character_sheet__skill__name">{skillData.displayName}</b>
+      {nameDisplay}
 
       {proficiencyDisplay}
 

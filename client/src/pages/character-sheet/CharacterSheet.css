@@ -5,7 +5,7 @@
   padding: 1rem;
   border: 1px solid black;
   border-radius: 2rem;
-  width: 67rem;
+  width: 79rem;
 }
 
 .character_sheet__content {
@@ -73,6 +73,11 @@
   margin: 0 1rem 0 1rem;
 }
 
+.character_sheet__resource_recovery_row {
+  display: flex;
+  justify-content: space-between;
+}
+
 .character_sheet__resources {
   border: 1px solid black;
   border-radius: 1rem;
@@ -91,6 +96,7 @@
   display: flex;
   justify-content: space-between;
   margin-left: .25rem;
+  margin-top: .25rem;
   /* width: 16rem; */
 }
 
@@ -141,12 +147,50 @@
   background-color: red;
 }
 
+.character_sheet__recovery {
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: .5rem;
+  width: 11rem;
+}
+
+.character_sheet__recovery_groups {
+  display: block;
+  /* justify-content: space-between; */
+  width: 10rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.character_sheet__recovery__item_button {
+  width: 10rem;
+  font-size: 70%;
+}
+
+.character_sheet_recovery__item__hover_text {
+  background-color: beige;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  margin-left: -10.5rem;
+  margin-top: 1.5rem;
+  width: 11rem;
+}
+
 .character_sheet__skills {
   border: 1px solid black;
   border-radius: 1rem;
   margin-top: 1rem;
   padding: .5rem;
-  width: 52rem;
+  width: 64rem;
+}
+
+.character_sheet__skills_groups {
+  display: flex;
+  justify-content: space-between;
+  width: 63rem;
+  flex-wrap: wrap;
 }
 
 
@@ -169,6 +213,20 @@
   margin-top: .5rem;
   padding: .25rem;
   font-size: 85%;
+}
+
+.character_sheet__skill__name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.character_sheet__skill__name_variant_menu {
+  position: absolute;
+  margin-left: -6rem;
+}
+
+.character_sheet__skill__name_variant_menu_item_button {
+  width: 6rem;
 }
 
 .character_sheet__skill__proficiency {

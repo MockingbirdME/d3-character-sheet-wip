@@ -8,19 +8,17 @@ function CharacterSheetSkills(params) {
   const [displayAllTraits, setDisplayAllTraits] = useState(false);
 
   const toggleTraitDisplay = () => {
-    console.log('toggle');
     setDisplayAllTraits(!displayAllTraits)
   }
 
-  const {characterData} = params;
+  const { skills } = params;
 
-  if (!characterData.resources) return (<div></div>)
-
-  const skills = Object.keys(characterData.skills)
+  if (!skills) return (<div></div>)
 
   const skillsDisplay = skills.map(skill => (
     <CharacterSheetSkill 
-      skillData={characterData.skills[skill]} 
+      key={skill.name.toLowerCase()}
+      skillData={skill} 
       displayAllTraits={displayAllTraits}
     />
   ))
@@ -45,7 +43,7 @@ function CharacterSheetSkills(params) {
         <b style={{textDecoration: 'underline'}}>Skills</b>
         {displayAllTraits ? showAllTraitsButton : hideSomeTraitsButton}
       </div>
-      <div className="character_sheet__resources_groups">
+      <div className="character_sheet__skills_groups">
         {skillsDisplay}
       </div>
     </div>

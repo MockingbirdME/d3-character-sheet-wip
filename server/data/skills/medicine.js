@@ -1,4 +1,4 @@
-export default medicine = {
+export default {
   name: 'Medicine',
   description: "",
   skillChecks: [
@@ -89,8 +89,8 @@ export default medicine = {
   ],
   isSkillTree: true,
   traits: [
-    {name: "Medic", effect: {text: "Gain +1 to all first aid and triage skill checks."}},
-    {name: "Apothecary", effect: {text: "Gain +1 to all pharmaceuticals checks."}},
-    {name: "Barber", effect: {text: "Gain +1 to all surgery skill checks."}}
+    {name: "Medic", effect: {text: "Gain +1 to all first aid and triage skill checks.", skillBoosts: ["First Aid", "Triage"]}},
+    {name: "Apothecary", effect: {text: "Gain +1 to all pharmaceuticals checks.", skillBoosts: ["Pharmaceuticals"]}},
+    {name: "Barber", effect: {text: "Gain +1 to all surgery skill checks.", skillBoosts: ["Surgery"]}}
   ],
 };

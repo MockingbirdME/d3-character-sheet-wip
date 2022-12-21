@@ -1,4 +1,4 @@
-export default meleeCombat = {
+export default {
   name: 'Melee Combat',
   description: "How well a character fights with a sword, axe, or fists. Melee combat skill is most often used when fighting in close quarters but also has a place in many sporting activities.",
   skillChecks: [
@@ -56,17 +56,17 @@ export default meleeCombat = {
   ],
   isSkillTree: true,
   traits: [
-    {name: "Brawler", effect: {text: "Treat all successful melee attacks made with out a weapon as if they had 1 additional success"}},
-    {name: "Bull Rusher", effect: {text: "When you successfully shove a character with an attack, your next move action this turn has its speed reduced by 1 if you use the movement to close the distance between you and the shoved target"}},
-    {name: "Distracting Combatant", effect: {text: "Gain +1 to faint skill checks"}},
-    {name: "Fast attacker", effect: {text: "When you take the flurry of blows combat action, increase the maximum number of additional successes you may spend by 1"}},
-    {name: "Finesse Fighter", effect: {text: "Treat one additional success spent to attempt to disarm an opponent as if it were two additional successes"}},
-    {name: "Wrestler", effect: {text: "Treat one additional success spent to attempt to grapple an opponent as if it were two additional successes"}},
-    {name: "Line Disruptor", effect: {text: "Treat one additional success spent to attempt to shove an opponent as if it were two additional successes"}},
-    {name: "Tripper???", effect: {text: "Treat one additional success spent to attempt to trip an opponent as if it were two additional successes"}},
-    {name: "Solid Striker", effect: {text: "When you take the power attack combat action, treat your body stat as 1 greater than it is"}},
-    {name: "Weapon Training", cost: [2], unlimited: true, effect: {text: "Select one melee weapon, reduce the difficulty rating of that weapon when making attacks with it by 1"}},
-    {name: "TODO figure out how TWF works and make a trait for it", cost: [3], effect: {text: ""}},
-    {name: "Reckless Attacker", cost: [3, 8], effect: {text: "When making a melee attack action you may spend 1 point each of vigilance and defense to add one bonus die to your skill check, for each bonus die in the final skill check result lose one additional defense. If you've taken this trait twice you may add a second bonus die to your skill check when using this trait."}}
+    {name: "Brawler", effect: {text: "Treat all successful melee attacks made with out a weapon as if they had 1 additional success"}, alwaysDisplay: true},
+    {name: "Bull Rusher", effect: {text: "When you successfully shove a character with an attack, your next move action this turn has its speed reduced by 1 if you use the movement to close the distance between you and the shoved target"}, alwaysDisplay: true},
+    {name: "Distracting Combatant", effect: {text: "Gain +1 to faint skill checks"}, alwaysDisplay: true},
+    {name: "Fast attacker", effect: {text: "When you take the flurry of blows combat action, increase the maximum number of additional successes you may spend by 1"}, alwaysDisplay: true},
+    {name: "Finesse Fighter", effect: {text: "Treat one additional success spent to attempt to disarm an opponent as if it were two additional successes"}, alwaysDisplay: true},
+    {name: "Wrestler", effect: {text: "Treat one additional success spent to attempt to grapple an opponent as if it were two additional successes"}, alwaysDisplay: true},
+    {name: "Line Disruptor", effect: {text: "Treat one additional success spent to attempt to shove an opponent as if it were two additional successes"}, alwaysDisplay: true},
+    {name: "Tripper???", effect: {text: "Treat one additional success spent to attempt to trip an opponent as if it were two additional successes"}, alwaysDisplay: true},
+    {name: "Solid Striker", effect: {text: "When you take the power attack combat action, treat your body stat as 1 greater than it is"}, alwaysDisplay: true},
+    {name: "Weapon Training", cost: [2], unlimited: true, effect: {text: "Select one melee weapon, reduce the difficulty rating of that weapon when making attacks with it by 1"}, alwaysDisplay: true},
+    {name: "TODO figure out how TWF works and make a trait for it", cost: [3], effect: {text: ""}, alwaysDisplay: true},
+    {name: "Reckless Attacker", cost: [3, 8], effect: {text: "When making a melee attack action you may spend 1 point each of vigilance and defense to add one bonus die to your skill check, for each bonus die in the final skill check result lose one additional defense. If you've taken this trait twice you may add a second bonus die to your skill check when using this trait."}, alwaysDisplay: true}
   ],
 };

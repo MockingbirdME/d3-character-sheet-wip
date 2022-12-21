@@ -1,4 +1,4 @@
-export default stealth = {
+export default {
   name: 'Stealth',
   description: "How well a character conceals themselves or something/someone else as well as how well they may disguise themselves or move in such a way as to avoid notice.",
   skillChecks: [
@@ -107,9 +107,9 @@ export default stealth = {
   ],
   isSkillTree: true,
   traits: [
-    {name: "Masquerade", effect: {text: "Gain +1 to all cover tracks and disguise skill checks."}},
-    {name: "Obfuscate", effect: {text: "Gain +1 to all hide and sneak skill checks."}},
-    {name: "Nonchalance", effect: {text: "Gain +1 to all blend in skill checks."}},
+    {name: "Masquerade", effect: {text: "Gain +1 to all cover tracks and disguise skill checks.", skillBoosts: ["Cover Tracks", "Disguise"]}},
+    {name: "Obfuscate", effect: {text: "Gain +1 to all hide and sneak skill checks.", skillBoosts: ["Hide", "Sneak"]}},
+    {name: "Nonchalance", effect: {text: "Gain +1 to all blend in skill checks.", skillBoosts: ["Blend In"]}},
     // {name: "Weapon Training", cost: [1], unlimited: true, effect: {text: "Select one range weapon, reduce the difficulty rating of that weapon when making ranged attacks with it by 1"}},
     // {name: "Inner Calm", effect: {text: "+1 defense when you take the Steady Oneself combat action"}},
     // {name: "Environment Specialist", effect: {text: "Choose an environment, while in that environment gain an additional skilled bonus die to all survival checks"}, costs: [2], unlimited: true},
