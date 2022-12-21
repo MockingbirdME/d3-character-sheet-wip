@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/MockingbirdME/d3-character-sheet-wip#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "@ibm-cloud/cloudant": "^0.3.1",
+    "axios": "^0.27.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "ibm-cloud-sdk-core": "^4.0.0"
   }
 }
