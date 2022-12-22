@@ -1,12 +1,22 @@
 import attributes from "../data/attributes.js";
 import backgrounds from "../data/backgrounds.js";
 import skills from "../data/skills/index.js";
+import cloudant from '../lib/cloudant.js'
 
 export default class Character {
+  static async fetchCharacterList() {
+    // Get view results for this check.
+    const {result} = await cloudant.postView({
+      view: 'characterList'
+    });
+
+    return result.rows.map(({ id, key: name }) => ({ id, name }));
+  }
+
   static expandBackgroundData(background) {
     const { key, primarySkill, secondarySkill, tertiarySkill } = background;
 
-    return { ...backgrounds[key], primarySkill, secondarySkill, tertiarySkill };
+    return { ...backgrounds[key], primarySkill, secondarySkill, tertiarySkill, key };
   }
 
   static expandBackgroundsData(backgrounds) {
@@ -14,8 +24,10 @@ export default class Character {
   }
 
   constructor(rawData) {
-    const { name, attributeBonuses, backgrounds, advancementPoints, resources, skills } = rawData;
+    const { _id, _rev, name, attributeBonuses, backgrounds, advancementPoints, resources, skills } = rawData;
 
+    this._id = _id;
+    this._rev = _rev;
     this._name = name;
     this._advancementPoints = advancementPoints;
 
@@ -40,8 +52,10 @@ export default class Character {
   }
 
   get attributes() {
+    const compiledValues = {};
     const attributeKeys = Object.keys(this._attributes);
-    return attributeKeys.map(key => this.getAttribute(key));
+    attributeKeys.forEach(key => compiledValues[key] = this.getAttribute(key));
+    return compiledValues;
   }
  
   getAttribute(attributeKey) {
@@ -91,8 +105,7 @@ export default class Character {
   }
 
   get skills() {
-    const skillKeys = Object.keys(this._skills);
-    return skillKeys.map(key => this._skills[key]);
+    return this._skills;
   }
 
   addBackgrounds(backgroundSnubs) {
@@ -130,7 +143,7 @@ export default class Character {
         const variantName = `${skillName} (${variant})`
         const variantKey = variant.toLowerCase();
         
-        variantData[variantKey] = this.getSkillData(characterSkillsData[variantName.toLowerCase()], {...skill, name: variantName})
+        variantData[variantName.toLowerCase()] = this.getSkillData(characterSkillsData[variantName.toLowerCase()], {...skill, name: variantName, key: variantKey})
       }
 
       this._skills[key] = {
@@ -187,14 +200,57 @@ export default class Character {
 
   toJSON() {
     // TODO make getters for the rest of the values
-    const { name, advancementPoints, attributes, backgrounds, skills } = this;
+    const { _id, name, advancementPoints, attributes, backgrounds, skills } = this;
     return {
+      _id,
       name,
       advancementPoints,
       backgrounds,
       attributes,
       skills
     }
+  }
+
+  getSkillStub(skill) {
+    const advancementPoints = skill.advancementPoints;
+    const traits = skill.traits.map(({name, cost}) => ({name, cost}));
+    if (advancementPoints || traits.length) return {advancementPoints, traits};
+  }
+
+  getSkillStubs(skills, variant = false) {
+    let skillStubs = {};
+    for (const [key, value] of Object.entries(skills)) {
+      if (value.variants) {
+        skillStubs = {...skillStubs, ...this.getSkillStubs(value.variants, true)};
+        continue
+      }
+      const stub = this.getSkillStub(value);
+      
+      if (stub) skillStubs[key] = stub;
+    }
+    return skillStubs;
+  }
+
+  save() {
+    const { _id, _rev, name, advancementPoints, attributes, backgrounds, skills } = this;
+
+    const backgroundStubs = backgrounds.map(background => ({
+      key: background.key,
+      primarySkill: background.primarySkill,
+      secondarySkill: background.secondarySkill,
+      tertiarySkill: background.tertiarySkill
+    }));
+
+    const attributeBonuses = {};
+    const resources = {};
+    for (const [key, value] of Object.entries(attributes)) {
+      if (value.otherBonuses) attributeBonuses[key] = value.otherBonuses;
+      if (value.resource) resources[key] = {max: value.max, current: value.current}
+    }
+
+    const skillStubs = this.getSkillStubs(skills);
+
+    cloudant.postDocument({_id, _rev, name, advancementPoints, backgrounds: backgroundStubs, attributeBonuses, resources, skills: skillStubs})
   }
 
 }

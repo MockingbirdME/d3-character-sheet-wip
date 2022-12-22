@@ -1,22 +1,20 @@
-import React from "react";
-import CharacterSheet from "../character-sheet";
+import React, {useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import "./Characters.css";
+import CharacterContext from "../../contexts/characters";
 
 function Characters() {
-  const [characterList, setCharacterList] = React.useState([]);
-  
-  const [selectedCharacter, setSelectedCharacter] = React.useState(null);
+  const navigate = useNavigate();
+  const characterContext = useContext(CharacterContext);
 
   React.useEffect(() => {
-    fetch("/api/characterList")
-      .then(async (res) => {
-        const data = await res.json()
-        setCharacterList(data)
-      })
-  }, []);
+    characterContext.fetchCharacterList()
+  }, [characterContext]);
+
+  const characterList = characterContext.characterList || [];
 
   const characterListItems = characterList.map((data) => (
-    <li key={data.name} onClick={() => setSelectedCharacter(data)}>{data.name}</li>
+    <li key={data.name} onClick={() => navigate(`/character/${data.id}`)}>{data.name}</li>
   ))
 
   const characterListContent = (
@@ -25,12 +23,9 @@ function Characters() {
     </ul>
   )
 
-  const content = selectedCharacter
-    ? <CharacterSheet selectedCharacter={selectedCharacter}/>
-    : characterListContent
   return (
     <div className="characters__container">
-      {content}
+      {characterListContent}
     </div>
   );
 }

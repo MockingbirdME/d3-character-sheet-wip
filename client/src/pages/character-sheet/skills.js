@@ -15,10 +15,10 @@ function CharacterSheetSkills(params) {
 
   if (!skills) return (<div></div>)
 
-  const skillsDisplay = skills.map(skill => (
+  const skillsDisplay = Object.keys(skills).map(skillKey => (
     <CharacterSheetSkill 
-      key={skill.name.toLowerCase()}
-      skillData={skill} 
+      key={skills[skillKey].name.toLowerCase()}
+      skillData={skills[skillKey]} 
       displayAllTraits={displayAllTraits}
     />
   ))

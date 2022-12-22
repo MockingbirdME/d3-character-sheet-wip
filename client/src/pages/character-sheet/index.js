@@ -1,30 +1,33 @@
-import React from "react";
+import React, {useContext} from "react";
+import {useParams} from "react-router-dom";
+
 import "./CharacterSheet.css";
 import CharacterSheetHeader from './header.js';
 
 import CharacterSheetAttributes from './attributes';
 import CharacterSheetResources from "./resources";
 import CharacterSheetSkills from "./skills";
+import CharacterContext from "../../contexts/characters";
 
 function CharacterSheet(params) {
-  const [characterData, setCharacterData] = React.useState({});
+  const { characterId } = useParams()
+  const characterContext = useContext(CharacterContext);
 
   React.useEffect(() => {
-    if (params.selectedCharacter) setCharacterData(params.selectedCharacter)
-    else 
-      fetch("/api/character")
-        .then((res) => res.json())
-        .then((data) => setCharacterData(data.message));
-  }, []);
+    characterContext.fetchCharacter(characterId)
+  }, [characterContext.loadedCharacter?.character, characterId]);
+
+  const characterData = characterContext.loadedCharacter?.character
 
   console.log(characterData);
-  if (!characterData.name) return "";
+  if (!characterData) return "";
 
   const primaryAttributes = [];
   const secondaryAttributes = []
   const resources = [];
 
-  characterData.attributes.forEach(attribute => {
+  Object.keys(characterData.attributes).forEach(attributeKey => {
+    const attribute = {...characterData.attributes[attributeKey], key: attributeKey};
     if (attribute.primaryAttribute) primaryAttributes.push(attribute);
     else if (attribute.resource) resources.push(attribute);
     else secondaryAttributes.push(attribute)

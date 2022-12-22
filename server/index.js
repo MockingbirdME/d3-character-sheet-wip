@@ -1,20 +1,21 @@
 import 'dotenv/config.js';
 
+import bodyParser from 'body-parser';
 import express  from "express";
 
-import characterList from "./data/characterList.js"
+import { apiRouter } from './api/index.js';
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from Express!" });
-});
 
-app.get("/api/characterList", (req, res) => {
-  res.json(characterList);
-});
+// 1. Install bodyParsers for the request types your API will support
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.text());
+app.use(bodyParser.json());
+
+app.use("/api", apiRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

@@ -45,7 +45,7 @@ function CharacterSheetResources(params) {
     <div className="character_sheet__recovery">
       <b style={{textDecoration: 'underline'}} >Recovery Periods</b>
       <ul className="character_sheet__recovery_groups">
-        {recoveryPeriods.map((recoveryPeriod) => <CharacterSheetRecoveryPeriod recoveryPeriod={recoveryPeriod} />)}
+        {recoveryPeriods.map((recoveryPeriod) => <CharacterSheetRecoveryPeriod key={recoveryPeriod.name} recoveryPeriod={recoveryPeriod} />)}
       </ul>
     </div>
   )

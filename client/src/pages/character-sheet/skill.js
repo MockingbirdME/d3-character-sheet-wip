@@ -4,6 +4,8 @@ import CharacterSheetSkillProficiency from "./skillProficiency";
 import CharacterSheetSkillTrait from "./skillTrait";
 
 function CharacterSheetSkill(params) {
+  const {skillData, displayAllTraits} = params;
+
   const [selectedVariant, setSelectedVariant] = useState();
   const [open, setOpen] = useState(false);
 
@@ -11,18 +13,15 @@ function CharacterSheetSkill(params) {
     setOpen(!open);
   };
 
-  const {skillData, displayAllTraits} = params;
-
-  if (!skillData) return (<div></div>)
-
   const setVariant = key => {
+    console.log('setting variant', key);
     const { advancementPoints, checks, name, traits } = skillData.variants[key];
 
     skillData.advancementPoints = advancementPoints;
     skillData.checks = checks;
     skillData.name = name;
     skillData.traits = traits;
-
+    
     setSelectedVariant(key);
     setOpen(false);
   }
@@ -51,6 +50,8 @@ function CharacterSheetSkill(params) {
     if (!selectedVariant) setHighestProficiencyVariant();
   }
 
+  if (skillData.variants && !selectedVariant) return ""
+
   const nameDisplayDropdown = skillData.variants
     ? (
       <div className="dropdown">
@@ -78,7 +79,7 @@ function CharacterSheetSkill(params) {
 
   const proficiencyDisplay = <CharacterSheetSkillProficiency skillData={skillData} />
 
-  const skillChecksItems = Object.keys(skillData.checks).map(skillCheck => (
+  const skillChecksItems = Object.keys(skillData.checks || {}).map(skillCheck => (
     <li key={skillCheck.toLocaleLowerCase()} className="character_sheet__skill__check_list_item">
       <span>{skillCheck}:</span>
       <span>+ {skillData.checks[skillCheck]}</span>

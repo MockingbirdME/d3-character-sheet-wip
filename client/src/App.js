@@ -1,24 +1,17 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, {Component, Fragment} from "react";
 
-function App() {
-  const [data, setData] = React.useState(null);
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./index.css";
+import Router from "./router.js";
 
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <Router />
+      </Fragment>
+    );
+  }
 }
 
 export default App;

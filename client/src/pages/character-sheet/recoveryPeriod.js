@@ -19,6 +19,7 @@ function CharacterSheetRecoveryPeriod(params) {
   const recoveryPeriodDisplay = (
     <li className="character_sheet__recovery__item">
       <button 
+        key={recoveryPeriod.name}
         className="character_sheet__recovery__item_button"
         onMouseOver={handleMouseOver} 
         onMouseOut={handleMouseOut} 
