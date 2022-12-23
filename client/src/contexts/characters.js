@@ -66,10 +66,43 @@ export const CharacterContextProvider = props => {
     }
   }
 
+  const getValidAttribute = (attribute) => {
+    if (attribute.max < 0) attribute.max = 0;
+    if (attribute.max > attribute.value) attribute.max = attribute.value;
+
+    if (attribute.current < 0) attribute.current = 0;
+    if (attribute.current >  attribute.max) attribute.current = attribute.max;
+
+    return attribute;
+  }
+
   const setAttributeValues = (attribute) => {
+    console.log(attribute);
     const attributes = {...loadedCharacter.character.attributes};
 
+    attribute = getValidAttribute(attribute);
+    console.log(attribute);
+    if (
+      attribute.current === attributes[attribute.key].current 
+      && attribute.max === attributes[attribute.key].max
+      ) return;
+
     attributes[attribute.key] = attribute;
+
+    const character = {...loadedCharacter.character, attributes}
+
+    setLoadedCharacter({...loadedCharacter, character})
+    saveCharacter(character);
+  }
+
+  const setAttributes = attributes => {
+    console.log(attributes);
+
+    for (const [key, value] of Object.entries(attributes)) {
+      attributes[key] = getValidAttribute(value)
+    }
+
+    // TODO Validate that changes have been made
 
     const character = {...loadedCharacter.character, attributes}
 
@@ -82,6 +115,7 @@ export const CharacterContextProvider = props => {
     loadedCharacter,
     fetchCharacter,
     fetchCharacterList,
+    setAttributes,
     setAttributeValues
   }}>{props.children}</CharacterContext.Provider>;
 };

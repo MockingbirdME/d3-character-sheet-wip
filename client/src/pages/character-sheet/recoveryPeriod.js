@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 function CharacterSheetRecoveryPeriod(params) {
 
@@ -23,6 +23,7 @@ function CharacterSheetRecoveryPeriod(params) {
         className="character_sheet__recovery__item_button"
         onMouseOver={handleMouseOver} 
         onMouseOut={handleMouseOut} 
+        onClick={recoveryPeriod.onClick}
       >{recoveryPeriod.name}</button>
       {isHovering && <span className="character_sheet_recovery__item__hover_text">{recoveryPeriod.text}</span>}
     </li>
