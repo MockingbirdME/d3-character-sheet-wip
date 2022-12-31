@@ -22,7 +22,7 @@ export default {
     displayName: "Gambler",
     description: "A gambler is someone who has a history of taking risks, they might be a scoundrel who is most at home playing cards in some tavern basement, a merchant who puts his fortune on the line to make more money, or an acrobat who performs ever more daring feats without a proper safety net.",
     luck: 2,
-    stamina: 1,
+    stamina: 0,
     defense: 0,
     willpower: 0  
   },
