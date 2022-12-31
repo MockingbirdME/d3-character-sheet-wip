@@ -2,7 +2,6 @@ import createError from 'http-errors';
 import { Router } from 'express';
 
 import cloudant from '../lib/cloudant.js'
-import characterList from '../data/characterList.js'
 import Character from '../classes/Character.js';
 
 export const characterRouter = new Router();

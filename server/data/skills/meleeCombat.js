@@ -19,8 +19,8 @@ export default {
           22 - 
         `,
       criticalFailure: 'The attacker provokes a free attack from the target',
-      conditionalFailure: 'The target loses 1 vigilance',
-      nearSuccess: 'The target looses 1 defense and vigilance',
+      conditionalFailure: '',
+      nearSuccess: 'The target looses 1 defense',
       criticalSuccess: `The target looses 1 defense and your next attack against the target this turn gains a bonus die`,
     },
       {
@@ -67,6 +67,6 @@ export default {
     {name: "Solid Striker", effect: {text: "When you take the power attack combat action, treat your body stat as 1 greater than it is"}, alwaysDisplay: true},
     {name: "Weapon Training", cost: [2], unlimited: true, effect: {text: "Select one melee weapon, reduce the difficulty rating of that weapon when making attacks with it by 1"}, alwaysDisplay: true},
     {name: "TODO figure out how TWF works and make a trait for it", cost: [3], effect: {text: ""}, alwaysDisplay: true},
-    {name: "Reckless Attacker", cost: [3, 8], effect: {text: "When making a melee attack action you may spend 1 point each of vigilance and defense to add one bonus die to your skill check, for each bonus die in the final skill check result lose one additional defense. If you've taken this trait twice you may add a second bonus die to your skill check when using this trait."}, alwaysDisplay: true}
+    {name: "Reckless Attacker", cost: [3, 8], effect: {text: "When making a melee attack action you may spend 1 point of defense to add one bonus die to your skill check, for each bonus die in the final skill check result lose one additional defense. If you've taken this trait twice you may add a second bonus die to your skill check when using this trait."}, alwaysDisplay: true}
   ],
 };

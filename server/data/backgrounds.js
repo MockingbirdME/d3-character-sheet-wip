@@ -4,7 +4,7 @@ export default {
     description: "",
     luck: 1,
     stamina: 0,
-    vigilance: 1,
+    defense: 1,
     willpower: 1
   },
   duelist: {
@@ -12,7 +12,7 @@ export default {
     description: "",
     luck: 1,
     stamina: 1,
-    vigilance: 1,
+    defense: 1,
     willpower: 0,
     primarySkill: "Ranged Combat",
     secondarySkill: "Personal Defense",
@@ -21,9 +21,9 @@ export default {
   gambler: {
     displayName: "Gambler",
     description: "A gambler is someone who has a history of taking risks, they might be a scoundrel who is most at home playing cards in some tavern basement, a merchant who puts his fortune on the line to make more money, or an acrobat who performs ever more daring feats without a proper safety net.",
-    luck: 1,
-    stamina: 0,
-    vigilance: 2,
+    luck: 2,
+    stamina: 1,
+    defense: 0,
     willpower: 0  
   },
   hunter: {
@@ -31,7 +31,7 @@ export default {
     description: "Those who have experience capturing or killing creatures regardless of method. A hunter may use traps to protect their farm, a bow feed their family, or their own wits to bring in criminals with bounties on their heads.",
     luck: 1,
     stamina: 1,
-    vigilance: 1,
+    defense: 1,
     willpower: 0
   },
   laborer: {
@@ -39,7 +39,7 @@ export default {
     description: "",
     luck: 0,
     stamina: 2,
-    vigilance: 0,
+    defense: 0,
     willpower: 2,
     traitsOptional: ["Hardy", "Healthy"]
   },
@@ -48,7 +48,7 @@ export default {
     description: "Being born into a household of privilege comes with a host of expectations and and responsibilities but, generally, also with a basic education.",
     luck: 1,
     stamina: 0,
-    vigilance: 0,
+    defense: 0,
     willpower: 2,
     traitsOptional: []
   },
@@ -57,7 +57,7 @@ export default {
     description: "Ambitious or wealthy heads of households might higher private tutors for they're children or even send them off to an academy for an education.",
     luck: 0,
     stamina: 1,
-    vigilance: 1,
+    defense: 1,
     willpower: 2
   },
   skilledCrafter: {
@@ -65,7 +65,7 @@ export default {
     description: "Not all workers are simple laborers many have honed their craft to such levels that they could make a living in most villages where they're skills are in demand.",
     luck: 0,
     stamina: 1,
-    vigilance: 1,
+    defense: 1,
     willpower: 2,
     traitsOptional: []
   },
@@ -74,7 +74,7 @@ export default {
       description: "",
       luck: 0,
       stamina: 1,
-      vigilance: 1,
+      defense: 1,
       willpower: 2,
       traitsOptional: ["Ambusher", "Combat Reflexes"]
   },
@@ -83,7 +83,7 @@ export default {
     description: "Ambitious or wealthy heads of households might higher private tutors for they're children or even send them off to an academy for an education.",
     luck: 0,
     stamina: 1,
-    vigilance: 1,
+    defense: 1,
     willpower: 2,
     traitsOptional: []
   }

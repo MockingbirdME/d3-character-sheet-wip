@@ -32,12 +32,6 @@ export default [
     resource: true
   },
   {
-    name: 'Vigilance',
-    baseValue: 3,
-    primaryAttributes: ['perception'],
-    resource: true
-  },
-  {
     name: 'Willpower',
     baseValue: 3,
     primaryAttributes: ['mind'],
@@ -81,6 +75,12 @@ export default [
     name: 'Defense Bonus (Ranged)',
     baseValue: 0,
     primaryAttributes: ['perception'],
+    alwaysDisplay: true
+  },
+  {
+    name: 'Initiative',
+    baseValue: 0,
+    primaryAttributes: ['perception', 'reflexes'],
     alwaysDisplay: true
   },
   {

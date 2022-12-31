@@ -12,7 +12,7 @@ function Characters() {
   }, [characterContext]);
 
   const characterList = characterContext.characterList || [];
-
+console.log(characterList);
   const characterListItems = characterList.map((data) => (
     <li key={data.name} onClick={() => navigate(`/character/${data.id}`)}>{data.name}</li>
   ))

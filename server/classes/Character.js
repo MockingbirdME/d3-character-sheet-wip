@@ -117,7 +117,7 @@ export default class Character {
   }
 
   applyBackgroundBaseResources(background) {
-    for (const resource of ['stamina', 'vigilance', 'willpower', 'luck']) {
+    for (const resource of ['defense', 'stamina', 'willpower', 'luck']) {
       if (!this._attributes[resource].backgroundBonuses) {
         this._attributes[resource].backgroundBonuses = 0;
       }
